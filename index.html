@@ -2,109 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Linux Course PDFs</title>
+  <title>Linux Resources</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #1f1c2c, #928dab);
-      color: #fff;
-      text-align: center;
-      padding: 50px;
-      perspective: 1000px; /* enables 3D depth */
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px;
     }
 
     h1 {
-      font-size: 2.5em;
-      margin-bottom: 15px;
-      color: #ffcc00;
-    }
-
-    p {
-      font-size: 1.2em;
-      margin-bottom: 40px;
-      opacity: 0.9;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
     }
 
     .container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 40px;
+      max-width: 1000px;
+      width: 100%;
     }
 
     .card {
       background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
       backdrop-filter: blur(10px);
-      padding: 25px;
-      width: 280px;
-      border-radius: 15px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-      transition: transform 0.4s, box-shadow 0.4s;
-      transform-style: preserve-3d;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
-      transform: rotateY(10deg) rotateX(10deg) scale(1.05);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
     }
 
     .card h2 {
-      font-size: 1.6em;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+      color: #ffcc70;
     }
 
-    .card p {
-      font-size: 1em;
-      margin-bottom: 20px;
-      opacity: 0.85;
+    .card ul {
+      list-style: none;
+      padding: 0;
     }
 
-    .pdf-btn {
+    .card ul li {
+      margin: 12px 0;
+    }
+
+    .card a {
       display: inline-block;
-      padding: 12px 22px;
-      font-size: 1em;
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #ff512f, #dd2476);
+      color: white;
       font-weight: bold;
-      color: #fff;
-      background: linear-gradient(135deg, #ff9800, #e65100);
-      border-radius: 10px;
       text-decoration: none;
-      transition: background 0.3s, transform 0.2s;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     }
 
-    .pdf-btn:hover {
-      background: linear-gradient(135deg, #ffa726, #ef6c00);
-      transform: scale(1.1);
+    .card a:hover {
+      background: linear-gradient(135deg, #24c6dc, #514a9d);
+      transform: scale(1.05);
     }
 
-    .footer {
-      margin-top: 60px;
-      font-size: 0.95em;
-      opacity: 0.8;
+    .ip-box {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 12px;
+      border-radius: 10px;
+      margin: 8px 0;
+      font-size: 1.1rem;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
     }
   </style>
 </head>
 <body>
-  <h1>📘 Linux Basic Course – Free Notes</h1>
-  <p>Download and level up your Linux skills 🚀</p>
-
+  <h1>🚀 Linux Study Resources & Ubuntu Servers</h1>
   <div class="container">
+    <!-- Question PDFs -->
     <div class="card">
-      <h2>📄 PDF 1</h2>
-      <p>Linux Basics – Command Line Introduction</p>
-      <a class="pdf-btn" href="https://www.linkedin.com/posts/rajendra0968jangid_linux-basic-course-1-activity-7357776278881513473-16Mu?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD5K7oEBQzR2beHeQPo0c2_b35huAxmtw10" target="_blank">Download</a>
+      <h2>📘 Linux Questions PDFs</h2>
+      <ul>
+        <li><a href="https://www.linkedin.com/posts/rajendra0968jangid_linux-basic-course-1-activity-7357776278881513473-16Mu" target="_blank">Download PDF 1</a></li>
+        <li><a href="https://www.linkedin.com/posts/rajendra0968jangid_linux-basic-course-activity-7362905669772996609-G2CH" target="_blank">Download PDF 2</a></li>
+        <li><a href="#">Download PDF 3</a></li>
+        <li><a href="#">Download PDF 4</a></li>
+      </ul>
     </div>
 
+    <!-- Ubuntu Machine Public IPs -->
     <div class="card">
-      <h2>📄 PDF 2</h2>
-      <p>Linux Basics – Practical Commands & Notes</p>
-      <a class="pdf-btn" href="https://www.linkedin.com/posts/rajendra0968jangid_linux-basic-course-activity-7362905669772996609-G2CH?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD5K7oEBQzR2beHeQPo0c2_b35huAxmtw10" target="_blank">Download</a>
+      <h2>🌐 Ubuntu Machine Public IPs</h2>
+      <div class="ip-box">192.168.1.10</div>
+      <div class="ip-box">192.168.1.11</div>
+      <div class="ip-box">192.168.1.12</div>
+      <div class="ip-box">192.168.1.13</div>
+      <div class="ip-box">192.168.1.14</div>
     </div>
-  </div>
-
-  <div class="footer">
-    💡 Pro Tip: Save these PDFs for quick Linux revision anytime!  
-    <br>© 2025 | Created by Rajendra Jangid
   </div>
 </body>
 </html>
