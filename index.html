@@ -5,112 +5,126 @@
   <title>Linux Resources</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      padding: 20px;
+      background: linear-gradient(to right, #2c3e50, #3498db);
       color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 40px;
     }
 
     h1 {
       text-align: center;
       margin-bottom: 20px;
-      font-size: 2.5rem;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
     }
 
     .container {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      max-width: 1000px;
-      width: 100%;
+      grid-template-rows: 1fr 1fr;
+      gap: 30px;
     }
 
     .card {
       background: rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-      backdrop-filter: blur(10px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+      transform: translateY(-5px) scale(1.02);
     }
 
     .card h2 {
       margin-bottom: 15px;
-      font-size: 1.8rem;
-      color: #ffcc70;
+      text-align: center;
+      color: #f1c40f;
     }
 
-    .card ul {
+    .pdf-links a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      background: #e67e22;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+      transition: background 0.3s;
+    }
+
+    .pdf-links a:hover {
+      background: #d35400;
+    }
+
+    .ip-list {
       list-style: none;
       padding: 0;
     }
 
-    .card ul li {
-      margin: 12px 0;
-    }
-
-    .card a {
-      display: inline-block;
-      padding: 10px 18px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #ff512f, #dd2476);
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background 0.3s ease, transform 0.2s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-    }
-
-    .card a:hover {
-      background: linear-gradient(135deg, #24c6dc, #514a9d);
-      transform: scale(1.05);
-    }
-
-    .ip-box {
-      background: rgba(255, 255, 255, 0.15);
-      padding: 12px;
+    .ip-item {
+      background: rgba(255,255,255,0.2);
+      margin: 10px 0;
+      padding: 10px 15px;
       border-radius: 10px;
-      margin: 8px 0;
-      font-size: 1.1rem;
-      box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 18px;
+    }
+
+    .copy-btn {
+      cursor: pointer;
+      padding: 6px 12px;
+      background: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    .copy-btn:hover {
+      background: #1e8449;
     }
   </style>
 </head>
 <body>
-  <h1>🚀 Linux Study Resources & Ubuntu Servers</h1>
+
+  <h1>📘 Linux Study Resources</h1>
+  
   <div class="container">
-    <!-- Question PDFs -->
+    <!-- First Row: Question PDFs -->
     <div class="card">
-      <h2>📘 Linux Questions PDFs</h2>
-      <ul>
-        <li><a href="https://www.linkedin.com/posts/rajendra0968jangid_linux-basic-course-1-activity-7357776278881513473-16Mu" target="_blank">Download PDF 1</a></li>
-        <li><a href="https://www.linkedin.com/posts/rajendra0968jangid_linux-basic-course-activity-7362905669772996609-G2CH" target="_blank">Download PDF 2</a></li>
-        <li><a href="#">Download PDF 3</a></li>
-        <li><a href="#">Download PDF 4</a></li>
-      </ul>
+      <h2>📑 Linux Question PDFs</h2>
+      <div class="pdf-links">
+        <a href="https://www.linkedin.com/posts/rajendra0968jangid_linux-basic-course-1-activity-7357776278881513473-16Mu" target="_blank">📥 Download PDF 1</a>
+        <a href="https://www.linkedin.com/posts/rajendra0968jangid_linux-basic-course-activity-7362905669772996609-G2CH" target="_blank">📥 Download PDF 2</a>
+      </div>
     </div>
 
-    <!-- Ubuntu Machine Public IPs -->
+    <!-- Second Row: Public IPs -->
     <div class="card">
-      <h2>🌐 Ubuntu Machine Public IPs</h2>
-      <div class="ip-box">192.168.1.10</div>
-      <div class="ip-box">192.168.1.11</div>
-      <div class="ip-box">192.168.1.12</div>
-      <div class="ip-box">192.168.1.13</div>
-      <div class="ip-box">192.168.1.14</div>
+      <h2>🌐 Ubuntu Public IPs</h2>
+      <ul class="ip-list">
+        <li class="ip-item">192.168.1.101 <button class="copy-btn" onclick="copyIP('192.168.1.101')">📋 Copy</button></li>
+        <li class="ip-item">192.168.1.102 <button class="copy-btn" onclick="copyIP('192.168.1.102')">📋 Copy</button></li>
+        <li class="ip-item">192.168.1.103 <button class="copy-btn" onclick="copyIP('192.168.1.103')">📋 Copy</button></li>
+        <li class="ip-item">192.168.1.104 <button class="copy-btn" onclick="copyIP('192.168.1.104')">📋 Copy</button></li>
+        <li class="ip-item">192.168.1.105 <button class="copy-btn" onclick="copyIP('192.168.1.105')">📋 Copy</button></li>
+      </ul>
     </div>
   </div>
+
+  <script>
+    function copyIP(ip) {
+      navigator.clipboard.writeText(ip).then(() => {
+        alert("✅ Copied: " + ip);
+      });
+    }
+  </script>
+
 </body>
 </html>
