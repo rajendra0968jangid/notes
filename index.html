@@ -5,21 +5,22 @@
   <title>Linux Course PDFs</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
       color: #fff;
       text-align: center;
-      padding: 40px;
+      padding: 50px;
+      perspective: 1000px; /* enables 3D depth */
     }
 
     h1 {
-      font-size: 2.2em;
+      font-size: 2.5em;
       margin-bottom: 15px;
       color: #ffcc00;
     }
 
     p {
-      font-size: 1.1em;
+      font-size: 1.2em;
       margin-bottom: 40px;
       opacity: 0.9;
     }
@@ -28,61 +29,64 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 30px;
+      gap: 40px;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
       padding: 25px;
-      width: 260px;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s, box-shadow 0.3s;
+      width: 280px;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      transition: transform 0.4s, box-shadow 0.4s;
+      transform-style: preserve-3d;
     }
 
     .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+      transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
     }
 
     .card h2 {
-      font-size: 1.5em;
+      font-size: 1.6em;
       margin-bottom: 10px;
     }
 
     .card p {
-      font-size: 0.95em;
+      font-size: 1em;
       margin-bottom: 20px;
       opacity: 0.85;
     }
 
     .pdf-btn {
       display: inline-block;
-      padding: 12px 20px;
+      padding: 12px 22px;
       font-size: 1em;
       font-weight: bold;
       color: #fff;
       background: linear-gradient(135deg, #ff9800, #e65100);
-      border-radius: 8px;
+      border-radius: 10px;
       text-decoration: none;
       transition: background 0.3s, transform 0.2s;
     }
 
     .pdf-btn:hover {
       background: linear-gradient(135deg, #ffa726, #ef6c00);
-      transform: scale(1.07);
+      transform: scale(1.1);
     }
 
     .footer {
       margin-top: 60px;
-      font-size: 0.9em;
+      font-size: 0.95em;
       opacity: 0.8;
     }
   </style>
 </head>
 <body>
   <h1>📘 Linux Basic Course – Free Notes</h1>
-  <p>Choose your PDF and start learning Linux the easy way 🚀</p>
+  <p>Download and level up your Linux skills 🚀</p>
 
   <div class="container">
     <div class="card">
