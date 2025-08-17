@@ -2,129 +2,125 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Linux Resources</title>
+  <title>Interactive Notes</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background: linear-gradient(to right, #2c3e50, #3498db);
-      color: white;
-    }
-
-    h1 {
+      background: linear-gradient(135deg, #2c3e50, #4ca1af);
+      color: #fff;
       text-align: center;
-      margin-bottom: 20px;
+      padding: 50px;
     }
-
     .container {
-      display: grid;
-      grid-template-rows: auto auto; /* ✅ take height as per content */
-      gap: 30px;
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
     }
-
     .card {
       background: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-      backdrop-filter: blur(8px);
-      transition: transform 0.3s;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .card:hover {
-      transform: translateY(-5px) scale(1.02);
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
     }
-
-    .card h2 {
+    h1 {
+      font-size: 24px;
       margin-bottom: 15px;
-      text-align: center;
-      color: #f1c40f;
     }
-
-    .pdf-links a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      background: #e67e22;
-      color: white;
-      border-radius: 10px;
-      text-decoration: none;
+    a {
+      color: #00ffcc;
       font-weight: bold;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-      transition: background 0.3s;
+      text-decoration: none;
     }
-
-    .pdf-links a:hover {
-      background: #d35400;
+    a:hover {
+      text-decoration: underline;
     }
-
-    .ip-list {
-      list-style: none;
-      padding: 0;
+    .ip-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
     }
-
-    .ip-item {
-      background: rgba(255,255,255,0.2);
-      margin: 10px 0;
-      padding: 10px 15px;
-      border-radius: 10px;
+    .ip-box {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 15px;
+      border-radius: 12px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 18px;
-    }
-
-    .copy-btn {
       cursor: pointer;
-      padding: 6px 12px;
-      background: #27ae60;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 14px;
-      transition: background 0.3s;
+      transition: background 0.2s ease;
     }
-
+    .ip-box:hover {
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .copy-btn {
+      background: #00ffcc;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      color: #000;
+      transition: background 0.2s ease;
+    }
     .copy-btn:hover {
-      background: #1e8449;
+      background: #00cc99;
     }
   </style>
 </head>
 <body>
-
-  <h1>📘 Linux Study Resources</h1>
-  
   <div class="container">
-    <!-- First Row: Question PDFs -->
+
+    <!-- Section 1: PDFs -->
     <div class="card">
-      <h2>📑 Linux Question PDFs</h2>
-      <div class="pdf-links">
-        <a href="https://www.linkedin.com/posts/rajendra0968jangid_linux-basic-course-1-activity-7357776278881513473-16Mu" target="_blank">📥 Download PDF 1</a>
-        <a href="https://www.linkedin.com/posts/rajendra0968jangid_linux-basic-course-activity-7362905669772996609-G2CH" target="_blank">📥 Download PDF 2</a>
-      </div>
+      <h1>📘 Linux Notes PDFs</h1>
+      <p>Click below to download:</p>
+      <p><a href="https://www.linkedin.com/posts/rajendra0968jangid_linux-basic-course-1-activity-7357776278881513473-16Mu?utm_source=social_share_send&utm_medium=member_desktop_web">📄 PDF 1</a></p>
+      <p><a href="https://www.linkedin.com/posts/rajendra0968jangid_linux-basic-course-activity-7362905669772996609-G2CH?utm_source=social_share_send&utm_medium=member_desktop_web">📄 PDF 2</a></p>
     </div>
 
-    <!-- Second Row: Public IPs -->
+    <!-- Section 2: IP Addresses -->
     <div class="card">
-      <h2>🌐 Ubuntu Public IPs</h2>
-      <ul class="ip-list">
-        <li class="ip-item">192.168.1.101 <button class="copy-btn" onclick="copyIP('192.168.1.101')">📋 Copy</button></li>
-        <li class="ip-item">192.168.1.102 <button class="copy-btn" onclick="copyIP('192.168.1.102')">📋 Copy</button></li>
-        <li class="ip-item">192.168.1.103 <button class="copy-btn" onclick="copyIP('192.168.1.103')">📋 Copy</button></li>
-        <li class="ip-item">192.168.1.104 <button class="copy-btn" onclick="copyIP('192.168.1.104')">📋 Copy</button></li>
-        <li class="ip-item">192.168.1.105 <button class="copy-btn" onclick="copyIP('192.168.1.105')">📋 Copy</button></li>
-      </ul>
+      <h1>🌍 Ubuntu Machine IPs</h1>
+      <div class="ip-container">
+        <div class="ip-box">
+          <span>192.168.1.10</span>
+          <button class="copy-btn" onclick="copyIP('192.168.1.10')">Copy</button>
+        </div>
+        <div class="ip-box">
+          <span>192.168.1.11</span>
+          <button class="copy-btn" onclick="copyIP('192.168.1.11')">Copy</button>
+        </div>
+        <div class="ip-box">
+          <span>192.168.1.12</span>
+          <button class="copy-btn" onclick="copyIP('192.168.1.12')">Copy</button>
+        </div>
+        <div class="ip-box">
+          <span>192.168.1.13</span>
+          <button class="copy-btn" onclick="copyIP('192.168.1.13')">Copy</button>
+        </div>
+        <div class="ip-box">
+          <span>192.168.1.14</span>
+          <button class="copy-btn" onclick="copyIP('192.168.1.14')">Copy</button>
+        </div>
+      </div>
+      <p style="margin-top:15px; font-size:14px; opacity:0.8;">Password: <b>q123</b></p>
     </div>
+
   </div>
 
   <script>
     function copyIP(ip) {
-      navigator.clipboard.writeText(ip).then(() => {
-        alert("✅ Copied: " + ip);
-      });
+      navigator.clipboard.writeText(ip);
+      alert("✅ IP copied: " + ip);
     }
   </script>
-
 </body>
 </html>
