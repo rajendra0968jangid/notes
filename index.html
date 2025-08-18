@@ -133,27 +133,7 @@
         alert("Copied: " + ip);
       });
     }
-    // Timer Function (3 hours)
-    let timeLeft = 3 * 60 * 60; // 3 hours in seconds
-    const timerElement = document.getElementById("timer");
-
-    function updateTimer() {
-      let hours = Math.floor(timeLeft / 3600);
-      let minutes = Math.floor((timeLeft % 3600) / 60);
-      let seconds = timeLeft % 60;
-
-      timerElement.textContent = `Time left: ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-
-      if (timeLeft <= 0) {
-        clearInterval(timerInterval);
-        timerElement.textContent = "⏰ Time is up!";
-        document.querySelector(".container").innerHTML = "<h2 style='text-align:center;color:red;'>Time expired! Access removed.</h2>";
-      }
-
-      timeLeft--;
-    }
-
-    const timerInterval = setInterval(updateTimer, 1000);
+    
 
   </script>
 </head>
