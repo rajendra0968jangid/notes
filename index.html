@@ -136,6 +136,40 @@
     
 
   </script>
+  <script>
+// List of IPs (this can come from API, backend, or config)
+const ipAddresses = [
+  "54.196.85.7",
+  "52.90.224.135",
+  "107.23.206.11",
+  "54.84.17.222",
+  "98.80.244.231"
+];
+
+// Render IP list into the container
+const ipGrid = document.getElementById("ipGrid");
+ipAddresses.forEach(ip => {
+  const div = document.createElement("div");
+  div.classList.add("ip-item");
+  div.innerHTML = `
+    ${ip} 
+    <button class="copy-btn" onclick="copyToClipboard('${ip}')">
+      <i class="fas fa-copy"></i> Copy
+    </button>
+  `;
+  ipGrid.appendChild(div);
+});
+
+// Copy to clipboard function
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    alert(`Copied: ${text}`);
+  }).catch(err => {
+    console.error("Copy failed", err);
+  });
+}
+</script>
+
 </head>
 
 <body>
@@ -178,23 +212,7 @@
       <div class="box">
         <h2>Ubuntu Machine Public IPs</h2>
         <h2>In-Active</h2>
-        <div class="ip-grid">
-          <div class="ip-item">54.196.85.7 <button class="copy-btn" onclick="copyToClipboard('54.196.85.7')"><i
-                class="fas fa-copy"></i> Copy</button></div>
-
-          <div class="ip-item">52.90.224.135 <button class="copy-btn" onclick="copyToClipboard('52.90.224.135')"><i
-                class="fas fa-copy"></i> Copy</button></div>
-
-          <div class="ip-item">107.23.206.11 <button class="copy-btn" onclick="copyToClipboard('107.23.206.11')"><i
-                class="fas fa-copy"></i> Copy</button></div>
-
-          <div class="ip-item">54.84.17.222 <button class="copy-btn" onclick="copyToClipboard('54.84.17.222')"><i
-                class="fas fa-copy"></i> Copy</button></div>
-
-          <div class="ip-item">98.80.244.231 <button class="copy-btn" onclick="copyToClipboard('98.80.244.231')"><i
-                class="fas fa-copy"></i> Copy</button></div>
-
-        </div>
+        <div class="ip-grid" id="ipGrid"></div>
       </div>
     </div>
 
