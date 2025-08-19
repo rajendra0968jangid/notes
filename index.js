@@ -21,7 +21,7 @@ ipAddresses.forEach(ip => {
     div.classList.add("ip-item");
     div.innerHTML = `
     ${ip} 
-    <button class="copy-btn" onclick="copyToClipboard('${ip}')">
+    <button class="copy-btn" onclick="copyToClipboard('ssh ubuntu@${ip}')">
       <i class="fas fa-copy"></i> Copy
     </button>
   `;
