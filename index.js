@@ -7,11 +7,11 @@ function copyToClipboard(ip) {
 
 // List of IPs (this can come from API, backend, or config)
 const ipAddresses = [
-"54.158.250.62",
-    "13.221.45.241",
-    "52.90.140.219",
-    "54.234.247.170",
-    "3.80.242.77"
+"13.217.43.129",
+    "54.234.98.78",
+    "18.234.124.235",
+    "35.168.20.99",
+    "52.90.253.228"
 ];
 
 // Render IP list into the container
