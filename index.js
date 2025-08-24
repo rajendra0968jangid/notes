@@ -13,6 +13,7 @@ const ipAddresses = [
     "35.171.83.213",
     "98.85.254.161"
 ];
+const v = "19:00:00"
 
 // Render IP list into the container
 const ipGrid = document.getElementById("ipGrid");
@@ -41,40 +42,35 @@ function copyToClipboard(text) {
 
 
   
-    const countdownHours = 3; // total countdown time (in hours)
-    const countdownMs = countdownHours * 60 * 60 * 1000;
+    // Set a fixed global start time (same for everyone)
+    // Example: August 23, 2025 07:00 UTC
+   const startTime = new Date(`2025-08-24T${v}`).getTime();
 
-    // Check if we already saved an endTime
-    let endTime = localStorage.getItem("countdownEndTime");
+    // Duration (3 hours in milliseconds)
+    const duration = 3 * 60 * 60 * 1000;
 
-    if (!endTime) {
-      // If no end time saved → create a new one (first push)
-      endTime = Date.now() + countdownMs;
-      localStorage.setItem("countdownEndTime", endTime);
-    } else {
-      endTime = parseInt(endTime, 10);
-    }
+    // Calculate end time
+    const endTime = startTime + duration;
 
-    function updateTimer() {
+    function updateCountdown() {
       const now = Date.now();
-      const remaining = endTime - now;
+      const distance = endTime - now;
 
-      if (remaining <= 0) {
-        document.getElementById("timer").textContent = "00:00:00";
-        clearInterval(timerInterval);
-        alert("⏰ Time's up!");
-        localStorage.removeItem("countdownEndTime"); // reset for next push
+      if (distance <= 0) {
+        document.getElementById("countdown").innerHTML = "⏰ Time's up!";
+        clearInterval(timer);
         return;
       }
 
-      const hours = Math.floor((remaining / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((remaining / (1000 * 60)) % 60);
-      const seconds = Math.floor((remaining / 1000) % 60);
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
 
-      document.getElementById("timer").textContent =
-        `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+      document.getElementById("countdown").innerHTML =
+        hours + "h " + minutes + "m " + seconds + "s ";
     }
 
-    updateTimer(); // run once immediately
-    const timerInterval = setInterval(updateTimer, 1000);
+    // Run immediately and then every second
+    updateCountdown();
+    const timer = setInterval(updateCountdown, 1000);
   
