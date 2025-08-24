@@ -36,3 +36,29 @@ function copyToClipboard(text) {
         console.error("Copy failed", err);
     });
 }
+
+
+
+
+    // Set countdown duration (in hours)
+    const hours = 3;   // 👈 change this to any number of hours
+    let totalSeconds = hours * 3600;
+
+    function updateTimer() {
+      let h = Math.floor(totalSeconds / 3600);
+      let m = Math.floor((totalSeconds % 3600) / 60);
+      let s = totalSeconds % 60;
+
+      document.getElementById('timer').textContent =
+        `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+
+      if (totalSeconds <= 0) {
+        clearInterval(countdown);
+        alert("⏰ Time's up!");
+      }
+      totalSeconds--;
+    }
+
+    // Start immediately
+    updateTimer();
+    const countdown = setInterval(updateTimer, 1000);
