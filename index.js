@@ -57,7 +57,7 @@ function copyToClipboard(text) {
       const distance = endTime - now;
 
       if (distance <= 0) {
-        document.getElementById("countdown").innerHTML = "⏰ Time's up!";
+        document.getElementById("countdown").innerHTML = "00:00:00";
         clearInterval(timer);
         return;
       }
