@@ -13,7 +13,7 @@ const ipAddresses = [
     "52.91.142.64",
     "54.224.198.142"
 ];
-const v = "19:00:00"
+const v = "09:32:00"
 
 // Render IP list into the container
 const ipGrid = document.getElementById("ipGrid");
