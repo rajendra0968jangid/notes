@@ -14,6 +14,7 @@ const ipAddresses = [
     "54.224.198.142"
 ];
 const v = "09:32:00"
+ const startTime = new Date(`2025-08-25T${v}`).getTime();
 
 // Render IP list into the container
 const ipGrid = document.getElementById("ipGrid");
@@ -44,7 +45,7 @@ function copyToClipboard(text) {
   
     // Set a fixed global start time (same for everyone)
     // Example: August 23, 2025 07:00 UTC
-   const startTime = new Date(`2025-08-24T${v}`).getTime();
+  
 
     // Duration (3 hours in milliseconds)
     const duration = 3 * 60 * 60 * 1000;
