@@ -7,11 +7,11 @@ function copyToClipboard(ip) {
 
 // List of IPs (this can come from API, backend, or config)
 const ipAddresses = [
-"13.222.185.171",
-    "98.81.83.181",
-    "54.90.96.21",
-    "18.212.215.233",
-    "3.90.203.165"
+"13.222.187.142",
+    "18.234.230.243",
+    "34.207.117.218",
+    "98.80.7.5",
+    "54.90.176.221"
 ];
 const v = "14:08:00"
  const startTime = new Date(`2025-08-30T${v}`).getTime();
