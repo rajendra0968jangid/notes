@@ -1,8 +1,8 @@
-function copyToClipboard(ip) {
-    navigator.clipboard.writeText(ip).then(() => {
-        // alert("Copied: " + ip);
-    });
-}
+// function copyToClipboard(ip) {
+//     navigator.clipboard.writeText(ip).then(() => {
+//         // alert("Copied: " + ip);
+//     });
+// }
 
 
 // List of IPs (this can come from API, backend, or config)
@@ -33,7 +33,7 @@ ipAddresses.forEach(ip => {
 // Copy to clipboard function
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(() => {
-        alert(`Copied: ${text}`);
+        // alert(`Copied: ${text}`);
     }).catch(err => {
         console.error("Copy failed", err);
     });
