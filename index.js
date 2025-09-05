@@ -1,6 +1,6 @@
 function copyToClipboard(ip) {
     navigator.clipboard.writeText(ip).then(() => {
-        alert("Copied: " + ip);
+        // alert("Copied: " + ip);
     });
 }
 
