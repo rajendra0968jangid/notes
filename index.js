@@ -7,14 +7,14 @@
 
 // List of IPs (this can come from API, backend, or config)
 const ipAddresses = [
-"13.218.85.11",
-    "18.232.173.13",
-    "13.218.242.149",
-    "54.175.209.53",
-    "3.94.167.28"
+"54.172.210.14",
+    "52.73.207.228",
+    "54.196.193.140",
+    "3.84.155.243",
+    "98.84.151.189"
 ];
-const v = "10:05:00"
- const startTime = new Date(`2025-09-06T${v}`).getTime();
+const v = "12:13:00"
+ const startTime = new Date(`2025-09-07T${v}`).getTime();
 
 // Render IP list into the container
 const ipGrid = document.getElementById("ipGrid");
