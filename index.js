@@ -7,11 +7,11 @@
 
 // List of IPs (this can come from API, backend, or config)
 const ipAddresses = [
-"107.20.27.52",
-    "184.72.89.116",
-    "52.87.251.45",
-    "3.89.139.24",
-    "3.93.164.51"
+"34.207.235.29",
+    "54.89.116.31",
+    "100.26.32.47",
+    "54.226.192.123",
+    "54.163.204.10"
 ];
 const v = "10:54:00"
  const startTime = new Date(`2025-09-11T${v}`).getTime();
