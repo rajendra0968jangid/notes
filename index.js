@@ -7,13 +7,13 @@
 
 // List of IPs (this can come from API, backend, or config)
 const ipAddresses = [
-"54.175.27.194",
-    "54.226.182.206",
-    "13.218.76.227",
-    "13.222.182.185",
-    "54.174.197.165"
+"34.228.42.205",
+    "18.208.215.96",
+    "50.19.32.246",
+    "54.91.210.138",
+    "18.232.174.152"
 ];
-const v = "06:56:00"
+const v = "16:00:00"
  const startTime = new Date(`2025-09-30T${v}`).getTime();
 
 // Render IP list into the container
