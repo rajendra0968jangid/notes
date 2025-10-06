@@ -1,125 +1,71 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <title>Azure Credentials</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <style>
-    body {
-      font-family: system-ui, Arial, sans-serif;
-      background:#f7f7f9;
-      color:#111;
-      padding:2rem;
-    }
-    .card {
-      max-width:720px;
-      margin:auto;
-      background:#fff;
-      border-radius:10px;
-      box-shadow:0 6px 20px rgba(0,0,0,0.06);
-      padding:1.5rem;
-    }
-    h1 { font-size:1.3rem; margin-bottom:1rem; }
-    .row {
-      display:flex;
-      gap:12px;
-      margin-bottom:8px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-    .label {
-      width:180px;
-      font-weight:600;
-      color:#333;
-    }
-    .value-box {
-      flex:1;
-      display:flex;
-      align-items:center;
-      gap:8px;
-    }
-    .value {
-      flex:1;
-      font-family: monospace;
-      background:#f1f1f3;
-      padding:8px 10px;
-      border-radius:6px;
-      overflow-wrap:anywhere;
-    }
-    .copy-btn {
-      cursor:pointer;
-      color:#555;
-      transition: color 0.2s;
-    }
-    .copy-btn:hover {
-      color:#0078d7;
-    }
-    .warning {
-      margin-top:12px;
-      color:#b71c1c;
-      font-weight:600;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Notes</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./index.css">
+  
+
+
 </head>
+
 <body>
-  <div class="card">
-    <h1>Azure Credentials (local display)</h1>
+  <div class="container">
+    <div class="grid">
+      <!-- Questions Section -->
+      <div class="box">
+        <h2>OST Notes</h2>
+        <a class="pdf-btn"
+          href="./Linux-Basics-Course-Study-Guide.pdf"
+          target="_blank">
+          <i class="fas fa-file-download"></i> Download PDF 1
+        </a>
+        <a class="pdf-btn"
+          href="./nginx-by-rajendra0968.pdf"
+          target="_blank">
+          <i class="fas fa-file-download"></i> Download PDF 2
+        </a>
+        <a class="pdf-btn"
+          href="https://www.w3schools.com/html/default.asp"
+          target="_blank">
+          <i class="fas fa-file-download"></i> Download PDF 3
+        </a>
+      </div>
 
-    <div class="row">
-      <div class="label">Azure Portal URL</div>
-      <div class="value-box">
-        <div class="value" id="portalUrl">https://portal.azure.com/azurekmlprodkodekloud.onmicrosoft.com</div>
-        <i class="fa-solid fa-copy copy-btn" onclick="copyText('portalUrl')"></i>
+      <div class="box">
+        <h2>Class Notes</h2>
+        <a class="pdf-btn" href="https://miro.com/app/board/uXjVJUz0cFk=/?t=1696068000" target="_blank">
+          <i class="fas fa-file-download"></i> Open
+        </a>
+      </div>
+
+      <div class="box">
+        <h2>Practice Questions</h2>
+        <a class="pdf-btn" href="./questions/Linux-Basics-Course-Study-Guide-1-1-questions.pdf" target="_blank"
+          rel="noopener noreferrer" aria-label="Open Practice Questions PDF">
+          <i class="fas fa-file-download"></i> Open
+        </a>
+        <a class="pdf-btn" href="./questions/Linux-Basics-Course-Study-Guide-1-1-question.pdf" target="_blank"
+          rel="noopener noreferrer" aria-label="Open Practice Questions PDF">
+          <i class="fas fa-file-download"></i> Open
+        </a>
+      </div>
+      <!-- IP Section -->
+      <div class="box">
+        <h2>Ubuntu Machine Public IPs</h2>
+        <h2 id="countdown">00:00:00</h2>
+        <div class="ip-grid" id="ipGrid"></div>
       </div>
     </div>
 
-    <div class="row">
-      <div class="label">Username</div>
-      <div class="value-box">
-        <div class="value" id="username">kk_lab_user_main-26b6508e5f304375@azurekmlprodkodekloud.onmicrosoft.com</div>
-        <i class="fa-solid fa-copy copy-btn" onclick="copyText('username')"></i>
-      </div>
-    </div>
+    <footer>
+      Created by <a href="https://www.linkedin.com/in/rajendra0968jangid/" target="_blank">Rajendra Jangid</a>
+    </footer>
 
-    <div class="row">
-      <div class="label">Password</div>
-      <div class="value-box">
-        <div class="value" id="password">DWrB8dR9UEQ7j3yp</div>
-        <i class="fa-solid fa-copy copy-btn" onclick="copyText('password')"></i>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="label">Application ID</div>
-      <div class="value-box">
-        <div class="value" id="appId">7fa7fc8b-478a-4f1d-b50d-755be84eaa0c</div>
-        <i class="fa-solid fa-copy copy-btn" onclick="copyText('appId')"></i>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="label">Client Secret</div>
-      <div class="value-box">
-        <div class="value" id="clientSecret">rag8Q~qY1KThx1FmHy~SXvGe2Xp24ZyKF-G6vcjj</div>
-        <i class="fa-solid fa-copy copy-btn" onclick="copyText('clientSecret')"></i>
-      </div>
-    </div>
-
-    <p class="warning">⚠️ This file should remain private. Don’t upload it to any server or repository.</p>
   </div>
-
-  <script>
-    function copyText(id) {
-      const text = document.getElementById(id).textContent.trim();
-      navigator.clipboard.writeText(text).then(() => {
-        const icon = event.target;
-        const oldClass = icon.className;
-        icon.className = "fa-solid fa-check copy-btn";
-        setTimeout(() => (icon.className = oldClass), 1000);
-      });
-    }
-  </script>
+  <script src="./index.js"></script>
 </body>
+
 </html>
