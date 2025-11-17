@@ -4,74 +4,89 @@
 //     });
 // }
 
-
 // List of IPs (this can come from API, backend, or config)
 const ipAddresses = [
-"34.229.89.34",
-    "23.22.211.20",
-    "44.223.0.164",
-    "54.172.28.15",
-    "3.95.23.147"
+  "34.229.89.34",
+  "23.22.211.20",
+  "44.223.0.164",
+  "54.172.28.15",
+  "3.95.23.147",
 ];
-const v = "14:24:00"
- const startTime = new Date(`2025-11-14T${v}`).getTime();
+const v = "14:24:00";
+const startTime = new Date(`2025-11-14T${v}`).getTime();
 
 // Render IP list into the container
 const ipGrid = document.getElementById("ipGrid");
-ipAddresses.forEach(ip => {
-    const div = document.createElement("div");
-    div.classList.add("ip-item");
-    div.innerHTML = `
+ipAddresses.forEach((ip) => {
+  const div = document.createElement("div");
+  div.classList.add("ip-item");
+  div.innerHTML = `
     ${ip} 
     <button class="copy-btn" onclick="copyToClipboard('ssh ubuntu@${ip}')">
       <i class="fas fa-copy"></i> Copy
     </button>
   `;
-    ipGrid.appendChild(div);
+  ipGrid.appendChild(div);
 });
+
+////////////////////////////
+////////////azure
+const ipAddresses1 = ["https://portal.azure.com/azurekmlprodkodekloud.onmicrosoft.com", "kk_lab_user_main-a8033d4a05ef4855@azurekmlprodkodekloud.onmicrosoft.com", "t^n3uxz%@k2w+9vw"];
+// Render IP list into the container
+const ipGrid1 = document.getElementById("ipGrid1");
+ipAddresses1.forEach((ip) => {
+  const div = document.createElement("div");
+  div.classList.add("ip-item");
+  div.innerHTML = `
+    ${ip} 
+    <button class="copy-btn" onclick="copyToClipboard('${ip}')">
+      <i class="fas fa-copy"></i> Copy
+    </button>
+  `;
+  ipGrid1.appendChild(div);
+});
+////////////////////
+///////// azure
 
 // Copy to clipboard function
 function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(() => {
-        // alert(`Copied: ${text}`);
-    }).catch(err => {
-        console.error("Copy failed", err);
+  navigator.clipboard
+    .writeText(text)
+    .then(() => {
+      // alert(`Copied: ${text}`);
+    })
+    .catch((err) => {
+      console.error("Copy failed", err);
     });
 }
 
+// Set a fixed global start time (same for everyone)
+// Example: August 23, 2025 07:00 UTC
 
+// Duration (3 hours in milliseconds)
+const duration = 3 * 60 * 60 * 1000;
 
+// Calculate end time
+const endTime = startTime + duration;
 
-  
-    // Set a fixed global start time (same for everyone)
-    // Example: August 23, 2025 07:00 UTC
-  
+function updateCountdown() {
+  const now = Date.now();
+  const distance = endTime - now;
 
-    // Duration (3 hours in milliseconds)
-    const duration = 3 * 60 * 60 * 1000;
+  if (distance <= 0) {
+    document.getElementById("countdown").innerHTML = "00:00:00";
+    clearInterval(timer);
+    return;
+  }
 
-    // Calculate end time
-    const endTime = startTime + duration;
+  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((distance / (1000 * 60)) % 60);
+  const seconds = Math.floor((distance / 1000) % 60);
 
-    function updateCountdown() {
-      const now = Date.now();
-      const distance = endTime - now;
+  document.getElementById("countdown").innerHTML =
+    hours + "h " + minutes + "m " + seconds + "s ";
+}
 
-      if (distance <= 0) {
-        document.getElementById("countdown").innerHTML = "00:00:00";
-        clearInterval(timer);
-        return;
-      }
-
-      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((distance / (1000 * 60)) % 60);
-      const seconds = Math.floor((distance / 1000) % 60);
-
-      document.getElementById("countdown").innerHTML =
-        hours + "h " + minutes + "m " + seconds + "s ";
-    }
-
-    // Run immediately and then every second
-    updateCountdown();
-    const timer = setInterval(updateCountdown, 1000);
-  
+// Run immediately and then every second
+updateCountdown();
+const timer = setInterval(updateCountdown, 1000);
