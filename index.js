@@ -12,7 +12,7 @@ const ipAddresses = [
   "34.228.62.115",
   "54.196.175.170",
 ];
-const v = "09:47:00";t
+const v = "09:47:00";
 const startTime = new Date(`2025-11-24T${v}`).getTime();
 
 // Render IP list into the container
