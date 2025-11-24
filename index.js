@@ -13,7 +13,7 @@ const ipAddresses = [
   "54.196.175.170",
 ];
 const v = "09:47:00";
-const startTime = new Date(`2025-11-24T${v}`).getTime();
+const startTime = new Date(`2025-11-25T${v}`).getTime();
 
 // Render IP list into the container
 const ipGrid = document.getElementById("ipGrid");
@@ -31,20 +31,20 @@ ipAddresses.forEach((ip) => {
 
 ////////////////////////////
 ////////////azure
-const ipAddresses1 = ["https://portal.azure.com/azurekmlprodkodekloud.onmicrosoft.com", "kk_lab_user_main-a8033d4a05ef4855@azurekmlprodkodekloud.onmicrosoft.com", "t^n3uxz%@k2w+9vw"];
-// Render IP list into the container
-const ipGrid1 = document.getElementById("ipGrid1");
-ipAddresses1.forEach((ip) => {
-  const div = document.createElement("div");
-  div.classList.add("ip-item");
-  div.innerHTML = `
-    ${ip} 
-    <button class="copy-btn" onclick="copyToClipboard('${ip}')">
-      <i class="fas fa-copy"></i> Copy
-    </button>
-  `;
-  ipGrid1.appendChild(div);
-});
+// const ipAddresses1 = ["https://portal.azure.com/azurekmlprodkodekloud.onmicrosoft.com", "kk_lab_user_main-a8033d4a05ef4855@azurekmlprodkodekloud.onmicrosoft.com", "t^n3uxz%@k2w+9vw"];
+// // Render IP list into the container
+// const ipGrid1 = document.getElementById("ipGrid1");
+// ipAddresses1.forEach((ip) => {
+//   const div = document.createElement("div");
+//   div.classList.add("ip-item");
+//   div.innerHTML = `
+//     ${ip} 
+//     <button class="copy-btn" onclick="copyToClipboard('${ip}')">
+//       <i class="fas fa-copy"></i> Copy
+//     </button>
+//   `;
+//   ipGrid1.appendChild(div);
+// });
 ////////////////////
 ///////// azure
 
